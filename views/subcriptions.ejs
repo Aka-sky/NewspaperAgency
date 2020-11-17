@@ -1,0 +1,30 @@
+<div class="container">
+    <h2 class="text-center my-5"> Subscriptions </h2>
+    <% if(typeof subscribed != 'undefined') { %>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Rate</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% let i = 1; subscribed.forEach(sub => { %>
+                <tr>
+                  <th scope="row"><%= i %></th>
+                  <td><%= sub.name %></td>
+                  <td><%= sub.type %></td>
+                  <td><%= sub.rate %></td>
+                </tr>
+                <% i++; %>
+            <% }) %>
+        </tbody>
+    </table>
+<% } else { %>
+    <div class="jumbotron">
+        <h1 class="display-4">No subscriptions.</h1>
+    </div>
+<% } %>
+</div>

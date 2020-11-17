@@ -1,0 +1,31 @@
+<h1>User Sign In</h1>
+
+<form action="/users/create-session" method="POST">
+    <div class="form-group">
+        <% if(typeof msg != 'undefined'){ %>
+            <div id="erralert" class="alert alert-warning alert-dismissible fade show" role="alert">
+              <%= typeof msg != 'undefined' ? msg : "" %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        <% } %>
+        <label>Email</label>
+        <input name="email" type="text" placeholder="Email ID" class="form-control" aria-describedby="emailHelp">
+        <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input name="password" type="password" placeholder="Password" class="form-control">
+    </div>
+    <button value="Sign In" type="submit" class="btn btn-primary">User Sign In</button>
+</form>
+
+<style>
+    form{
+        margin: 10px;
+    }
+    h1{
+        margin: 10px;
+    }
+</style>
